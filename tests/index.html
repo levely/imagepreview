@@ -1,0 +1,28 @@
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../src/imagepreview.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#preview1').imagepreview({
+        input: '[name="testimage1"]',
+        reset: '#reset1',
+        preview: '#preview1'
+    });
+    $('#preview1').imagepreview({
+        input: '[name="testimage2"]',
+        reset: '#reset2',
+        preview: '#preview2',
+    });
+});
+</script>
+</head>
+<body>
+    <input type="file" name="testimage1" />
+    <input type="button" id="reset1" value="reset1" />
+    <div id="preview1"></div>
+    <input type="file" name="testimage2" />
+    <input type="button" id="reset2" value="reset2" />
+    <div id="preview2"></div>
+</body>
+</html>
