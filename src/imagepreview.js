@@ -18,20 +18,17 @@
         },
         getImage: function(input) {
             var image;
-            
+            var name = $(input).prop(params.prop);
             image = $(input).prop('files')[0];
             if (image) {
                 images[name] = image;
                 return image;
             }
-             
-            var name = $(input).prop(params.prop);
             var image = images[name];
             if (image) {
                 return image;
             }
-
-            return image;
+            return null;
         },
         clearImage: function(inputDom) {
             delete images[$(inputDom).prop(params.prop)];
