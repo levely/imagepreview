@@ -4,6 +4,7 @@
         input: null,
         reset: null,
         preview: null,
+        attributes: {}
     };
     var images = {};
     var methods = {
@@ -44,6 +45,9 @@
                 fr.readAsDataURL(file);
                 fr.onload = function() {
                     var img = $('<img />').attr('src', this.result);
+                    jQuery.each(params.attributes, function(attr, value) {
+                        img.attr(attr, value);
+                    });
                     $(preview).empty().append(img);
                 };
                 images[$(input).prop(params.prop)] = file;
